@@ -14,6 +14,8 @@
 ## 功能作用
 ### 创建QFrame对象
 
+(QFrame仰视图)[https://github.com/WHRayLee/ReadBook/blob/main/Qt/QFrame%E6%A0%B7%E5%BC%8F%E5%9B%BE.png]
+
 ### 框架形状
 #### API
 - setFrameShape(QFrame.Shape)
