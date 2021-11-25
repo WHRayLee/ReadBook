@@ -6,3 +6,37 @@
 
 ## 继承
 - QAbstractScollArea 
+
+## 功能作用
+### 占位提示文本
+    1. setPlaceholderText(str)
+    2. placeholderText() -> str 
+
+### 内容设置
+#### 普通文本
+    1. setPlainText(str)
+    2. insertPlainText(str)
+    > 定位在所有文本的最前边
+    3. toPlainText() -> str
+#### HTML
+    1. setHtml(str)
+    2. insertHtml(str)
+    3. toHtml()
+#### 设置文本(自动判定)
+    1. setText(str)
+#### 追加文本
+#### 粘贴文本
+#### 清空
+#### 文本光标
+### 自动格式化
+### 覆盖模式
+### 光标设置
+### 对齐方式
+### 字体格式
+### 颜色设置
+### 当前的字符格式
+### 常用编辑操作
+### 滚动
+### 只读设置
+### tab控制
+### 锚点获取
