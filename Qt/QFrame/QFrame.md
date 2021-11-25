@@ -67,8 +67,43 @@
 - 总宽度
     1. frameWidth()
 
+> 资料是PyQt5的，实现是按照Go语言实现的
+```go
+package main
+
+import (
+	"github.com/therecipe/qt/core"
+	"github.com/therecipe/qt/widgets"
+	"os"
+)
+
+func main() {
+	application := widgets.NewQApplication(len(os.Args), os.Args)
+	widget := widgets.NewQWidget(nil, 1)
+	widget.Resize2(500, 500)
+	qFrame := widgets.NewQFrame(widget, core.Qt__Widget)
+	qFrame.Resize2(100, 100)
+	qFrame.SetStyleSheet("background-color:cyan;")
+	qFrame.SetFrameShape(widgets.QFrame__Box)
+	qFrame.SetFrameShadow(widgets.QFrame__Sunken)
+	qFrame.SetLineWidth(6)
+	qFrame.SetMidLineWidth(12)
+	rect := core.NewQRect()
+	rect.SetRect(20, 20, 60, 60)
+	qFrame.SetFrameRect(rect)
+	qFrame.Move2(20, 20)
+	widget.Show()
+	os.Exit(application.Exec())
+}
+
+```
+
 ### 框架样式
+- setFrameStype
+> 按位或可以得到组合效果
 
 ### 框架矩阵
+- setFrameRect
+> 可以设置内部的矩阵大小
 
 ## 信号
