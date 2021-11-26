@@ -1,8 +1,9 @@
- ```golang
- go get github.com/micro/micro
- go get github.com/micro/go-micro
- go get github.com/micro/protoc-gen-micro
- go get github.com/micro/go-plugins/registry/consul
+```bash
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+```
+
+```golang
+go get github.com/micro/micro/v2@v2.4.0
 ```
 
  ```bash
