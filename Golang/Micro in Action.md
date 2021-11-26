@@ -3,7 +3,7 @@
 2.micro: 一个命令行工具。 虽非必须， 但它可以为Micro开发和管理提供很多便利。 例如， 生成模板项目， 查看服务运行状态， 调用服务等。 
 
 ## go-micro的架构
-!(https://github.com/WHRayLee/ReadBook/blob/main/Golang/Micro%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+![架构图](https://github.com/WHRayLee/ReadBook/blob/main/Golang/Micro%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 > Service 是系统中最核心的接口， 它负责将其它接口有机地组织在一起
 
