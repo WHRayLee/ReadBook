@@ -1,3 +1,16 @@
+## HTTP
+- 1.0
+> 无状态，短连接
+
+- 1.1
+> 可以记录状态
+
+- 2.0
+> 可以支持长链接 `Connection:keep-alive`
+
+## Cookie
+
+
 ## 获取数据，绑定数据
 1. form表单
 > postForm() 获取form表单传递的数据
