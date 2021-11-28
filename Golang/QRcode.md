@@ -19,3 +19,5 @@ func GenerateQRCode(filename string, content string, weight int, height int) {
     png.Encode(file, qrCode)
 }
 ```
+
+- github.com/claudiodangelis/qrcp
