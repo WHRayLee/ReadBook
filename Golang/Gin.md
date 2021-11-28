@@ -87,7 +87,48 @@ engine.GET("/session", func(context *gin.Context) {
 	}
 })
 ```
+## 中间件
+> 只对设定以后的路由管用
 
+```go
+package middleware
+
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+func CheckSession() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		fmt.Println("中间件1")
+		return
+		ctx.Next()
+		fmt.Println("回来1")
+	}
+}
+
+func CheckUserName(ctx *gin.Context) {
+	fmt.Println("中间件2")
+	ctx.Next()
+	fmt.Println("回来2")
+}
+
+func MiddleWareFunc(ctx *gin.Context) {
+	fmt.Println("中间件3")
+	ctx.Abort()
+}
+
+func main()  {
+	engine := gin.Default()
+	engine.Use(CheckSession())
+	engine.Use(CheckUserName)
+	engine.GET("/", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "最终结果")
+	})
+	engine.Run(":8080")
+}
+```
 
 
 > 官方案例
