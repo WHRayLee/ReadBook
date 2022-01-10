@@ -10,6 +10,9 @@ public class demo {
     public static void main(String[] args) throws Exception {
         // 默认是逻辑核数的个数为并行度
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        // 程序默认并行度
+        int parallelism2 = env.getParallelism();
+        System.out.println("程序默认的并行度：" + parallelism2);
         DataStreamSource<String> data = env.socketTextStream("localhost", 8888);
         // parallel -> 对应 task个数
         // Source -> Transform rebalance task划分
@@ -32,3 +35,4 @@ public class demo {
         env.execute();
     }
 }
+
