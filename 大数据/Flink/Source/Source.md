@@ -11,3 +11,11 @@
 - 非并行的Source:并行度只能为1
 - 并行的Source
 
+## 本地查看UI
+```xml
+<dependency>
+  <groupId>org.apache.flink</groupId>
+  <artifactId>flink-runtime-web_${scala.binary.version}</artifactId>
+  <version>${flink.version}</version>
+</dependency>
+```
