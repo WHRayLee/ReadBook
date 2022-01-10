@@ -21,4 +21,15 @@
 ```
 
 > 单并行度的使用了`SourceFunction`
+
 > 多并行度的使用 `RichParallelSourceFunction`
+
+
+## Kakfa连接器
+```xml
+      <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-connector-kafka_2.12</artifactId>
+        <version>${flink.version}</version>
+      </dependency>
+```
