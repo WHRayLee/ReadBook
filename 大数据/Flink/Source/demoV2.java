@@ -11,7 +11,10 @@ public class demoV2 {
     public static void main(String[] args) throws Exception {
         // 默认是逻辑核数的个数为并行度
         // 创建本地可以查看web UI的信息
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(new Configuration());
+        // 设置参数，并传入
+        Configuration configuration = new Configuration();
+        configuration.setInteger("rest",9999);
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(configuration);
         // 程序默认并行度
         int parallelism2 = env.getParallelism();
         System.out.println("程序默认的并行度：" + parallelism2);
