@@ -19,3 +19,6 @@
   <version>${flink.version}</version>
 </dependency>
 ```
+
+> 单并行度的使用了`SourceFunction`
+> 多并行度的使用 `RichParallelSourceFunction`
