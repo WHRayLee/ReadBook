@@ -1,11 +1,10 @@
 package com.raylee.demo.Lesson02;
 
+import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 
-import java.util.Arrays;
-import java.util.List;
 
 public class SelfDefineRichSourceFunction {
     public static void main(String[] args) throws Exception {
@@ -20,18 +19,25 @@ public class SelfDefineRichSourceFunction {
     }
 
     private static class MySource2 extends RichSourceFunction<String> {
+        private Integer subTaskNum;
+        private Integer count = 0;
         @Override
         public void run(SourceContext<String> ctx) throws Exception {
-            List<String> strings = Arrays.asList("aaa", "bb", "ccc", "ddd", "eee");
-            // 发送数据用 ctx
-            for (String string : strings) {
-                ctx.collect("test1-" + string);
+            while (true) {
+                ctx.collect(subTaskNum + "->" + count);
+                count++;
             }
         }
 
         @Override
         public void cancel() {
 
+        }
+
+        @Override
+        public void open(Configuration parameters) throws Exception {
+            System.out.println("打开");
+            subTaskNum = getRuntimeContext().getIndexOfThisSubtask();
         }
     }
 }
